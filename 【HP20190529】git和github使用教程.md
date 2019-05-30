@@ -259,6 +259,13 @@ $ git commit -m "新增说明文件"
 $ ssh-keygen -t rsa -C "youremail@example.com"
 $ ssh-add id_rsa.pub
 ```
+
+执行用户确认的相关命令：
+```bash
+ $ git config --global user.email "you@example.com"
+ $ git config --global user.name "Your Name"
+```
+
 你需要把邮件地址换成你自己的邮件地址，然后一路回车，使用默认值即可，由于这个Key也不是用于军事目的，所以也无需设置密码。
 
 如果一切顺利的话，可以在用户主目录里找到.ssh目录，里面有id_rsa和id_rsa.pub两个文件，这两个就是SSH Key的秘钥对，id_rsa是私钥，不能泄露出去，id_rsa.pub是公钥，可以放心地告诉任何人。
@@ -310,6 +317,8 @@ Branch 'master' set up to track remote branch 'master' from 'origin'.
 ```
 
 执行完毕后，你就会发现，本地的这个库的所有文件，都同步到了github中。特别说明一点，github的文档默认格式是支持markdown的，markdown的语法熟悉了非常的方便，非常好用。
+
+**首次执行的时候，会提示要求输入用户名和密码。**
 
 ##### 3.2.3 假设我现在对git本地文件内容，添加了一些补充说明如何二次同步呢
 
@@ -404,8 +413,40 @@ nothing to commit, working tree clean
 
 
 
+##### 故障1解决方案
 
+当对当前文件push的时候，输入以下代码的时候报错：
 
+```bash
+git push -u origin master
+To https://github.com/zhang0838/Git_learn.git
+ ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'https://github.com/zhang0838/Git_learn.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+```
+
+解决方案如下：
+
+```bash
+$ git pull --rebase origin master
+warning: no common commits
+remote: Enumerating objects: 19, done.
+remote: Counting objects: 100% (19/19), done.
+remote: Compressing objects: 100% (13/13), done.
+remote: Total 19 (delta 2), reused 18 (delta 1), pack-reused 0
+Unpacking objects: 100% (19/19), done.
+From https://github.com/zhang0838/Git_learn
+ * branch            master     -> FETCH_HEAD
+ * [new branch]      master     -> origin/master
+First, rewinding head to replay your work on top of it...
+Applying: 添加小白适合阅读的git和github使用教程
+```
+将云端的文档和本地库文档全部合并。
 
 
 
