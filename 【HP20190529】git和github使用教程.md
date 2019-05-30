@@ -448,8 +448,20 @@ Applying: 添加小白适合阅读的git和github使用教程
 ```
 将云端的文档和本地库文档全部合并。
 
+##### git删除本地代码库文件后同步到远程仓库同时删除远程仓库文件
 
-
+```bash
+1.更新本地代码库
+git pull
+2.对需要删除的文件、文件夹进行如下操作:
+git rm ss.c(删除文件)
+git rm -r aaa (删除文件夹)
+3.提交修改
+git commit -m “Delete files.”
+4.将修改提交到远程仓库的xxx分支:
+git push origin xxx
+```
+具体可查看：https://blog.csdn.net/qq_25623355/article/details/84787784 
 
 
 ###### 附录：本文重点参考如下
