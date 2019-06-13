@@ -463,6 +463,27 @@ git push origin xxx
 ```
 具体可查看：https://blog.csdn.net/qq_25623355/article/details/84787784 
 
+##### git删除本地代码库文件后同步远程仓库的所有代码
+
+只需要保证当前git下没有同名称的库存在即可克隆远程仓库，代码如下:
+```bash
+IBM@DESKTOP-US5B6J0 MINGW64 /d/git
+$ git clone git@github.com:echohandsome/Machine_Learning_in_Action_for_smallwhite.git
+Cloning into 'Machine_Learning_in_Action_for_smallwhite'...
+The authenticity of host 'github.com (13.229.188.59)' can't be established.
+RSA key fingerprint is SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added 'github.com,13.229.188.59' (RSA) to the list of known hosts.
+remote: Enumerating objects: 33, done.
+remote: Counting objects: 100% (33/33), done.
+remote: Compressing objects: 100% (24/24), done.
+remote: Total 33 (delta 7), reused 16 (delta 2), pack-reused 0
+Receiving objects: 100% (33/33), 1.05 MiB | 351.00 KiB/s, done.
+Resolving deltas: 100% (7/7), done.
+
+```
+
+
 
 ###### 附录：本文重点参考如下
 ```python
