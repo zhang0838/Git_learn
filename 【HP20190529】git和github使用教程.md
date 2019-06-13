@@ -471,7 +471,7 @@ IBM@DESKTOP-US5B6J0 MINGW64 /d/git
 $ git clone git@github.com:echohandsome/Machine_Learning_in_Action_for_smallwhite.git
 Cloning into 'Machine_Learning_in_Action_for_smallwhite'...
 The authenticity of host 'github.com (13.229.188.59)' can't be established.
-RSA key fingerprint is SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8.
+RSA key fingerprint is SHA256:.
 Are you sure you want to continue connecting (yes/no)? yes
 Warning: Permanently added 'github.com,13.229.188.59' (RSA) to the list of known hosts.
 remote: Enumerating objects: 33, done.
